@@ -18,12 +18,12 @@ import jakarta.persistence.PrePersist;
 public class BaseEntity {
 	@Id
 	@NonNull
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	public Integer id;
 	
-	@Column(name = "created_at", nullable=false, updatable = false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+	@Column(name = "created_at", nullable=false, updatable = false)
     @CreationTimestamp
-    private Date createdAt;
+    public Date createdAt;
 
 	
 	@PrePersist
